@@ -1,0 +1,96 @@
+#include <stdio.h> 
+#include <stdlib.h> 
+struct Node { 
+
+    int data; 
+
+    struct Node* next; 
+}; 
+
+static void reverse(struct Node** h_ref) 
+{ 
+
+    struct Node* prev = NULL; 
+
+    struct Node* current = *h_ref; 
+
+    struct Node* next = NULL; 
+
+    while (current != NULL) 
+	{ 
+ 
+
+        next = current->next; 
+
+        current->next = prev; 
+
+        prev = current; 
+
+        current = next; 
+
+    } 
+
+    *h_ref = prev; 
+} 
+
+  
+
+void push(struct Node** h_ref, int new_data) 
+{ 
+
+    struct Node* new_node = (struct Node*)malloc(sizeof(struct Node)); 
+
+    new_node->data = new_data; 
+
+    new_node->next = (*h_ref); 
+
+    (*h_ref) = new_node; 
+} 
+
+
+void printList(struct Node* h) 
+{ 
+
+    struct Node* temp = h; 
+
+    while (temp != NULL) { 
+
+        printf("%d  ", temp->data); 
+
+        temp = temp->next; 
+
+    } 
+} 
+
+  
+
+int main() 
+{ 
+
+
+    struct Node* h = NULL; 
+
+  
+
+    push(&h, 20); 
+
+    push(&h, 4); 
+
+    push(&h, 15); 
+
+    push(&h, 85); 
+
+  
+
+    printf("Given list\n"); 
+
+    printList(h); 
+
+    reverse(&h); 
+
+    printf("\nReversed  list \n"); 
+
+    printList(h); 
+
+    getchar(); 
+}
