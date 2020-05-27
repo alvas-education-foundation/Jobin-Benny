@@ -1,0 +1,20 @@
+1.Given an array arr[] of the positive integers of size N, the task is to find the largest element on the left side of each index which is smaller than the element present at that index. 
+
+def Maximum(num, n): 
+    for i in range(n): 
+  
+        currAns = -1
+        for j in range(i-1,-1,-1): 
+            if (num[j] > currAns and
+                num[j] < num[i]): 
+                currAns = num[j] 
+  
+        print(currAns,end=" ") 
+if __name__ == '__main__': 
+  
+    num=[2,5,10 ] 
+  
+    n = len(arr) 
+  
+    Maximum(num, n) 
+  
