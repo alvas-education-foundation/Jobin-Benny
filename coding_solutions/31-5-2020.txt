@@ -1,0 +1,38 @@
+1.Python program to find the sum of array
+
+def _sum(arr,n): 
+      
+    # return sum using sum  
+    # inbuilt sum() function 
+    return(sum(arr)) 
+  
+# driver function 
+arr=[] 
+# input values to list 
+arr = [12, 3, 4, 15] 
+  
+# calculating length of array 
+n = len(arr) 
+  
+ans = _sum(arr,n) 
+  
+# display sum 
+print ('Sum of the array is ', ans) 
+
+2.Python program to swap two elements in a list
+
+def swapPositions(list, pos1, pos2): 
+       
+    first_ele = list.pop(pos1)    
+    second_ele = list.pop(pos2-1) 
+
+    list.insert(pos1, second_ele)   
+    list.insert(pos2, first_ele)   
+      
+    return list
+
+List = [67, 78, 29, 20] 
+pos1, pos2  = 2, 4
+  
+print(swapPositions(List, pos1-1, pos2-1)) 
+  
