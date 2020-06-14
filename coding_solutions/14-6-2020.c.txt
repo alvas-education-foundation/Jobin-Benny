@@ -1,0 +1,52 @@
+
+Test 1:
+ #include <stdio.h>
+    
+    unsigned int revBits(unsigned int data)
+    {
+        unsigned char totalBits = sizeof(data) * 4;
+        unsigned int revNum = 0, i, temp;
+
+        for (i = 0; i < totalBits; i++)
+        {
+            temp = (data & (1 << i));
+            if(temp)
+                revNum |= (1 << ((totalBits - 1) - i));
+        }
+
+        return revNum;
+    }
+
+
+    int main()
+    {
+        unsigned int num =4567;
+        printf("\n%u", revBits(num));
+        return 0;
+    }
+
+Test 2:
+ #include <stdio.h>
+    
+    unsigned int revBits(unsigned int data)
+    {
+        unsigned char totalBits = sizeof(data) * 10;
+        unsigned int revNum = 0, i, temp;
+
+        for (i = 0; i < totalBits; i++)
+        {
+            temp = (data & (1 << i));
+            if(temp)
+                revNum |= (1 << ((totalBits - 1) - i));
+        }
+
+        return revNum;
+    }
+
+
+    int main()
+    {
+        unsigned int num =213;
+        printf("\n%u", revBits(num));
+        return 0;
+    }
