@@ -1,0 +1,57 @@
+
+Write a C Program to rotate an array by K positions.
+
+
+#include <stdio.h> 
+
+void leftRotatebyOne(int arr[], int n); 
+
+
+void leftRotate(int arr[], int d, int n) 
+{ 
+
+    int i; 
+
+    for (i = 0; i < d; i++) 
+
+        leftRotatebyOne(arr, n); 
+} 
+
+  
+
+void leftRotatebyOne(int arr[], int n) 
+{ 
+
+    int temp = arr[n-1], i; 
+
+    for (i = n-1; i > 0; i--) 
+
+        arr[i] = arr[i - 1]; 
+
+    arr[i] = temp; 
+} 
+
+
+void printArray(int arr[], int n) 
+{ 
+
+    int i;
+    for (i = 0; i<n; i++) 
+    {
+        printf("%d ", arr[i]); 
+    }
+     
+} 
+
+
+int main() 
+{ 
+    int i,n=3;
+    int arr[] = { 4, 5, 6}; 
+    printf("After rotation:");
+    leftRotate(arr, 2, 3); 
+    printArray(arr, 3); 
+    for(i = 0; i < n; i++)
+        printf("\nElement at index %d: %d\n", i, arr[i]);
+    return 0;
+}
