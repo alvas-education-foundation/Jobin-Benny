@@ -1,0 +1,13 @@
+1.This is a Python Program to Print all Integers that Aren’t Divisible by Either 6 or 8 or 9 and Lie between 1 and 50
+ 
+for i in range(0,50):
+    if((i%6)!=0) and ((i%8)!=0) and ((i%9)!=0):
+        print(i)
+
+2.This is a Python Program to Check if a Number is a Palindrome
+
+num=list(input())
+if(num==num[::-1]):
+    print("palindrome")
+else:
+    print("not palindrome")
